@@ -269,11 +269,14 @@
 
 #pragma mark 改变摄像头位置
 - (void)changeCameraPostion {
-    if (self.cameraManager.position == LMCameraManagerDevicePositionBack)
+    if (self.cameraManager.position == LMCameraManagerDevicePositionBack){
         self.cameraManager.position = LMCameraManagerDevicePositionFront;
-    else
+        self.flashButton.hidden = YES;
+    }
+    else{
         self.cameraManager.position = LMCameraManagerDevicePositionBack;
-    
+        self.flashButton.hidden = NO;
+    }
 }
 
 #pragma mark 改变闪光灯状态

@@ -77,9 +77,100 @@
     filters.color = [UIColor yellowColor];
     return filters;
 }
+///素描
++(GPUImageFilterGroup*)sketchFilter{
+    GPUImageSketchFilter *filter = [[GPUImageSketchFilter alloc] init];///素描
+    GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc] init];
+    [(GPUImageFilterGroup *) group setInitialFilters:[NSArray arrayWithObject: filter]];
+    [(GPUImageFilterGroup *) group setTerminalFilter:filter];
+    group.color = [UIColor lightGrayColor];
+    group.title = @"素描";
+    return group;
+    
+}
+///水晶球
++(GPUImageFilterGroup*)sphereFilter{
+    
+    GPUImageGlassSphereFilter *filter = [[GPUImageGlassSphereFilter alloc] init];///水晶球
+    GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc] init];
+    [(GPUImageFilterGroup *) group setInitialFilters:[NSArray arrayWithObject: filter]];
+    [(GPUImageFilterGroup *) group setTerminalFilter:filter];
+    group.color = [UIColor lightGrayColor];
+    group.title = @"水晶球";
+    return group;
+    
+    
+}
+///凸起
++(GPUImageFilterGroup*)bulgeDistortionFilter{
+    
+    GPUImageBulgeDistortionFilter *filter = [[GPUImageBulgeDistortionFilter alloc] init];
+    filter.radius = 0.4;
+    
+    GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc] init];
+    [(GPUImageFilterGroup *) group setInitialFilters:[NSArray arrayWithObject: filter]];
+    [(GPUImageFilterGroup *) group setTerminalFilter:filter];
+    group.color = [UIColor lightGrayColor];
+    group.title = @"哈哈镜";
+    return group;
+    
+}
+///卡通
++(GPUImageFilterGroup*)toonFilter{
+    GPUImageToonFilter *filter = [[GPUImageToonFilter alloc] init];
+    
+    GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc] init];
+    [(GPUImageFilterGroup *) group setInitialFilters:[NSArray arrayWithObject: filter]];
+    [(GPUImageFilterGroup *) group setTerminalFilter:filter];
+    group.color = [UIColor lightGrayColor];
+    group.title = @"卡通";
+    return group;
+    
+    
+}
+
+///浮雕
++(GPUImageFilterGroup*)embossFilter{
+    GPUImageEmbossFilter *filter = [[GPUImageEmbossFilter alloc] init];
+    filter.intensity = 4;
+    GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc] init];
+    [(GPUImageFilterGroup *) group setInitialFilters:[NSArray arrayWithObject: filter]];
+    [(GPUImageFilterGroup *) group setTerminalFilter:filter];
+    group.color = [UIColor lightGrayColor];
+    group.title = @"浮雕";
+    return group;
+}
+
++(GPUImageFilterGroup*)selectiveBlurFilter{
+    GPUImageGaussianSelectiveBlurFilter *filter = [[GPUImageGaussianSelectiveBlurFilter alloc] init];
+    GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc] init];
+    [(GPUImageFilterGroup *) group setInitialFilters:[NSArray arrayWithObject: filter]];
+    [(GPUImageFilterGroup *) group setTerminalFilter:filter];
+    group.color = [UIColor lightGrayColor];
+    group.title = @"高斯模糊";
+    return group;
+}
++(GPUImageFilterGroup*)swirlFilter{
+    GPUImageSwirlFilter *filter = [[GPUImageSwirlFilter alloc] init];
+    filter.angle = 0.2;
+    GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc] init];
+    [(GPUImageFilterGroup *) group setInitialFilters:[NSArray arrayWithObject: filter]];
+    [(GPUImageFilterGroup *) group setTerminalFilter:filter];
+    group.color = [UIColor lightGrayColor];
+    group.title = @"扭曲";
+    return group;
+}
+///马赛克
++(GPUImageFilterGroup*)mosaicFilter{
+    GPUImageMaskFilter *filter = [[GPUImageMaskFilter alloc] init];
+    GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc] init];
+    [(GPUImageFilterGroup *) group setInitialFilters:[NSArray arrayWithObject:filter]];
+    [(GPUImageFilterGroup *) group setTerminalFilter:filter];
+    group.color = [UIColor lightGrayColor];
+    group.title = @"马赛克";
+    return group;
+}
 
 
 @end
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com
+

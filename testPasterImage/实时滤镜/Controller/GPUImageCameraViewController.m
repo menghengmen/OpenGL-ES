@@ -3,7 +3,7 @@
 //  Test1030
 //
 //  Created by 哈哈 on 18/10/16.
-//  Copyright © 2015年 xx11dragon. All rights reserved.
+//  Copyright © 2018年 哈哈. All rights reserved.
 //
 
 #import "GPUImageCameraViewController.h"
@@ -84,8 +84,28 @@
         
         GPUImageFilterGroup *f5 = [LMCameraFilters testGroup1];
         [videoCamera addTarget:f5];
+        GPUImageFilterGroup *f6 = [LMCameraFilters sketchFilter];
+        [videoCamera addTarget:f6];
+        GPUImageFilterGroup *f7 = [LMCameraFilters sphereFilter];
+        [videoCamera addTarget:f7];
         
-        NSArray *arr = [NSArray arrayWithObjects:f1,f2,f3,f4,f5,nil];
+        GPUImageFilterGroup *f8 = [LMCameraFilters bulgeDistortionFilter];
+        [videoCamera addTarget:f8];
+        
+        GPUImageFilterGroup *f9 = [LMCameraFilters toonFilter];
+        [videoCamera addTarget:f9];
+        
+        GPUImageFilterGroup *f10 = [LMCameraFilters embossFilter];
+        [videoCamera addTarget:f10];
+        
+        GPUImageFilterGroup *f12 = [LMCameraFilters swirlFilter];
+        [videoCamera addTarget:f12];
+        GPUImageFilterGroup *f11 = [LMCameraFilters selectiveBlurFilter];
+        [videoCamera addTarget:f11];
+        
+        GPUImageFilterGroup *f13 = [LMCameraFilters mosaicFilter];
+        [videoCamera addTarget:f13];
+        NSArray *arr = [NSArray arrayWithObjects:f1,f6,f7,f8,f9,f10,f11,f12,f13,f2,f3,f4,f5,nil];
         _filters = arr;
     }
     return _filters;

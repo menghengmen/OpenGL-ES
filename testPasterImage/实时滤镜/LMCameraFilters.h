@@ -20,9 +20,22 @@
 + (GPUImageFilterGroup *)contrast;
 
 + (GPUImageFilterGroup *)testGroup1;
-
+///素描
++(GPUImageFilterGroup*)sketchFilter;
+///水晶球
++(GPUImageFilterGroup*)sphereFilter;
+///t凸起
++(GPUImageFilterGroup*)bulgeDistortionFilter;
+///卡通
++(GPUImageFilterGroup*)toonFilter;
+///浮雕
++(GPUImageFilterGroup*)embossFilter;
+///高斯m模糊
++(GPUImageFilterGroup*)selectiveBlurFilter;
+///扭曲
++(GPUImageFilterGroup*)swirlFilter;
+///马赛克
++(GPUImageFilterGroup*)mosaicFilter;
 
 @end
-// 版权属于原作者
-// http://code4app.com (cn) http://code4app.net (en)
-// 发布代码于最专业的源码分享网站: Code4App.com
+

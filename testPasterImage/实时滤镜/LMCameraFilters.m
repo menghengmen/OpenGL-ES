@@ -170,6 +170,21 @@
     group.title = @"马赛克";
     return group;
 }
+///渐晕效果
++(GPUImageFilterGroup*)VignetteFilter{
+    GPUImageVignetteFilter *filter = [[GPUImageVignetteFilter alloc] init];
+    GPUImageFilterGroup *group = [[GPUImageFilterGroup alloc] init];
+    [(GPUImageFilterGroup *) group setInitialFilters:[NSArray arrayWithObject:filter]];
+    [(GPUImageFilterGroup *) group setTerminalFilter:filter];
+    group.color = [UIColor lightGrayColor];
+    group.title = @"渐晕";
+    return group;
+}
+
+
+
+
+
 
 
 @end

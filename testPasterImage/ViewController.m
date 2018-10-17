@@ -32,14 +32,15 @@
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    
+-(void)viewWillAppear:(BOOL)animated{
     [self.navigationController setNavigationBarHidden:YES] ;
     [[UIApplication sharedApplication] setStatusBarHidden:YES] ;
+}
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
     [self configUi];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(addPasterImage:)];
-    [self.imageView addGestureRecognizer:tap];
 }
 
 -(void)configUi{
@@ -47,16 +48,6 @@
                                   @"icon_home_beauty",
                                   @"icon_home_camera" ,
                                   nil];
-    
-    NSArray *highLightedBackImageArr = [NSArray arrayWithObjects:
-                                        @"home_block_red_b",
-                                        @"home_block_orange_b",
-                                        nil];
-    NSArray *imageViewBackImageArr = [NSArray arrayWithObjects:
-                                      @"home_block_red_a",
-                                      @"home_block_orange_a",
-                                      nil];
-    
     NSArray *textArr = [NSArray arrayWithObjects:@"美化图片", @"万能相机", nil];
     
     FWButton *btnHome = nil;
@@ -80,8 +71,15 @@
         btnHome = [FWButton button];
         [btnHome setTitle:[textArr objectAtIndex:i] forState:UIControlStateNormal];
         [btnHome setImage:[UIImage imageNamed:[imageViewImageArr objectAtIndex:i]] forState:UIControlStateNormal];
-        [btnHome setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:[imageViewBackImageArr objectAtIndex:i]]]];
-        [btnHome setBackgroundColorHighlighted:[UIColor colorWithPatternImage:[UIImage imageNamed:[highLightedBackImageArr objectAtIndex:i]]]];
+        btnHome.cornerRadius = 56;
+        btnHome.clipsToBounds = YES;
+        if (i == 0) {
+            btnHome.backgroundColor = [UIColor orangeColor];
+
+        } else {
+            btnHome.backgroundColor = [UIColor purpleColor];
+
+        }
         btnHome.frame = CGRectMake(row * (kWidth + padding) + page * WIDTH + startX, col * (kHeight + padding) + startY, kWidth, kHeight);
         [btnHome.titleLabel setFont:[UIFont systemFontOfSize:14]];
         
@@ -89,9 +87,7 @@
         btnHome.topPading = 0.5;
         [self.view addSubview:btnHome];
     }
-
     
-        
 }
 
 #pragma mark action
@@ -103,9 +99,9 @@
             
             imagePicker.delegate = self;
             imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-            [self presentViewController:imagePicker animated:YES completion:^{
+                        [self presentViewController:imagePicker animated:NO completion:^{
                 [[UIApplication sharedApplication] setStatusBarHidden:YES];
-                
+
             }
              ];
         }
@@ -120,7 +116,7 @@
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [self dismissViewControllerAnimated:imagePicker completion:^{
+    [self dismissViewControllerAnimated:NO completion:^{
         
     }];
 }
@@ -128,26 +124,14 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     UIImage *selectedImage = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
-    [self dismissViewControllerAnimated:imagePicker completion:^{
-        self.imageView.image = selectedImage;
-    }];
-    
-}
-
-/**
- *  跳转到下页
- */
-- (IBAction)addPasterImage:(UITapGestureRecognizer *)sender
-{
     YBPasterImageVC *pasterVC = [[YBPasterImageVC alloc]init];
-    pasterVC.originalImage = self.imageView.image;
-    
-    pasterVC.block = ^(UIImage *editedImage){
-        self.imageView.image = editedImage;
-    };
-    
+    pasterVC.originalImage = selectedImage;
     [self.navigationController pushViewController:pasterVC animated:YES];
-    
+
+    [self dismissViewControllerAnimated:NO completion:^{
+       
+    }];
+ 
 }
 
 @end

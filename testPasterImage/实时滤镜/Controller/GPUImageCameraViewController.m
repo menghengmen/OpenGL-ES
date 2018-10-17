@@ -39,6 +39,9 @@
 @property (nonatomic , strong) UIButton *cameraPostionButton;
 //    拍照
 @property (nonatomic , strong) UIButton *snapshotButton;
+/// 返回
+@property (nonatomic , strong) UIButton *backButton;
+
 //    background black view
 @property (nonatomic , strong) UIView  *upBlackView;
 @property (nonatomic , strong) UIView  *downBlackView;
@@ -58,7 +61,7 @@
     [self.upBlackView addSubview:self.flashButton];
     [self.view addSubview:self.downBlackView];
     [self.downBlackView addSubview:self.snapshotButton];
-    
+    [self.downBlackView addSubview:self.backButton];
     [self.filterChooserView addFilters:self.filters];
     [self.view addSubview:self.filterChooserView];
 }
@@ -103,7 +106,7 @@
         GPUImageFilterGroup *f11 = [LMCameraFilters selectiveBlurFilter];
         [videoCamera addTarget:f11];
         
-        GPUImageFilterGroup *f13 = [LMCameraFilters mosaicFilter];
+        GPUImageFilterGroup *f13 = [LMCameraFilters VignetteFilter];
         [videoCamera addTarget:f13];
         NSArray *arr = [NSArray arrayWithObjects:f1,f6,f7,f8,f9,f10,f11,f12,f13,f2,f3,f4,f5,nil];
         _filters = arr;
@@ -234,6 +237,25 @@
     return _snapshotButton;
 }
 
+#pragma mark 返回按钮
+-(UIButton*)backButton{
+    if (!_backButton) {
+        CGPoint center = CGPointMake(20, self.downBlackView.bounds.size.height / 2);
+
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.tag = 4;
+        [button setTitle:@"返回" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor redColor];
+        button.center = center;
+        button.bounds = CGRectMake(0, 0, 44, 44);
+        [button addTarget:self action:@selector(selectedButton:) forControlEvents:UIControlEventTouchUpInside];
+        _backButton = button;
+    }
+    
+    return _backButton;
+    
+}
+
 #pragma mark 按钮点击事件
 - (void)selectedButton:(UIButton *)button {
     
@@ -247,7 +269,9 @@
         case 3:
             [self changeCameraPostion];
             break;
-            
+        case 4:
+            [self.navigationController popViewControllerAnimated:YES];
+            break;
         default:
             break;
     }

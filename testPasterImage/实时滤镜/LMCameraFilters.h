@@ -36,6 +36,9 @@
 +(GPUImageFilterGroup*)swirlFilter;
 ///马赛克
 +(GPUImageFilterGroup*)mosaicFilter;
+///渐晕效果
++(GPUImageFilterGroup*)VignetteFilter;
+
 
 @end
 

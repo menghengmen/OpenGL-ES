@@ -318,7 +318,7 @@ static CGFloat bottomButtonH = 44;
  */
 - (void)setRightButton
 {
-    [self initRightButtonWithButtonW:50 buttonH:50 title:@"完成" titleColor:[UIColor redColor] touchBlock:^(UIButton *rightButton) {
+    [self initRightButtonWithButtonW:50 buttonH:50 title:@"保存并分享" titleColor:[UIColor redColor] touchBlock:^(UIButton *rightButton) {
     }];
     
     WS(weakSelf);
@@ -327,22 +327,39 @@ static CGFloat bottomButtonH = 44;
     weakSelf.rightBtnBlock = ^(NSString *string){
         
         [weakSelf.pasterView hiddenBtn];
-        if (weakSelf.block) {
-            
-            if (weakSelf.pasterView != nil) {
-                UIImage *editedImage = [weakSelf doneEdit];
-                weakSelf.block(editedImage);
-            }
-            else
-            {
-                weakSelf.block(weakSelf.pasterImageView.image);
-            }
-            
-            [weakSelf.pasterImageView removeFromSuperview];
-            [weakSelf.filterScrollView removeFromSuperview];
-            [weakSelf.navigationController popViewControllerAnimated:YES];
-        }
+        UIImage *editedImage = [weakSelf doneEdit];
+        UIImageWriteToSavedPhotosAlbum(editedImage, nil, nil, nil);
+        [self shareWithImage:editedImage];
+//        if (weakSelf.block) {
+//
+//            if (weakSelf.pasterView != nil) {
+//                UIImage *editedImage = [weakSelf doneEdit];
+//                weakSelf.block(editedImage);
+//            }
+//            else
+//            {
+//                weakSelf.block(weakSelf.pasterImageView.image);
+//            }
+//
+//            [weakSelf.pasterImageView removeFromSuperview];
+//            [weakSelf.filterScrollView removeFromSuperview];
+//            [weakSelf.navigationController popViewControllerAnimated:YES];
+//        }
     };
+}
+
+//  点击分享后 执行
+-(void)shareWithImage:(UIImage*)editImage{
+    NSArray *activityItems = @[editImage];
+    
+    NSArray * items =  activityItems;    //分享图片 数组
+    UIActivityViewController * activityCtl = [[UIActivityViewController alloc]initWithActivityItems:items applicationActivities:nil];
+    
+    //去除一些不需要的图标选项
+    activityCtl.excludedActivityTypes = @[UIActivityTypePostToFacebook,UIActivityTypeAirDrop];
+    
+    [self presentViewController:activityCtl animated:YES completion:nil];
+    
 }
 
 /**

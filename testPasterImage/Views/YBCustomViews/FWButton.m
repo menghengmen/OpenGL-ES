@@ -49,8 +49,6 @@
     self = [super initWithCoder:aDecoder];
     if (self) {
         self.cornerRadius = 10.f;
-        self.backgroundColor = [UIColor colorWithWhite:0.f alpha:0.4f];
-        self.backgroundColorHighlighted = [UIColor colorWithWhite:0.f alpha:0.6f];
     }
     return self;
 }

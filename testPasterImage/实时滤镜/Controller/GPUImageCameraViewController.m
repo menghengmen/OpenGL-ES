@@ -260,8 +260,7 @@
     [self.cameraManager snapshotSuccess:^(UIImage *image) {
         
         NSLog(@"%@",image);
-        
-        
+        UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
     } snapshotFailure:^{
         NSLog(@"拍照失败");
     }];

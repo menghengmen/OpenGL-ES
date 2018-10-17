@@ -2,8 +2,8 @@
 //  main.m
 //  testPasterImage
 //
-//  Created by 王迎博 on 16/9/5.
-//  Copyright © 2016年 王迎博. All rights reserved.
+//  Created by 哈哈 on 2018/10/15.
+//  Copyright © 2018年 哈哈. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

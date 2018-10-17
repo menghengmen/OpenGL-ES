@@ -722,7 +722,7 @@
 				INFOPLIST_FILE = testPasterImage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiapin.www.testPasterImage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GKDYVideoMH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -739,7 +739,7 @@
 				INFOPLIST_FILE = testPasterImage/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.jiapin.www.testPasterImage;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GKDYVideoMH;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

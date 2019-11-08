@@ -23,6 +23,3 @@
 动图
 
 ![gif图](https://raw.githubusercontent.com/wangyingbo/YBPasterImage/master/gif.gif)
-
-### 四、项目下载地址
-[项目](https://github.com/menghengmen/---)

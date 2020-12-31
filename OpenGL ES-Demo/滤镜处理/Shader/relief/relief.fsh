@@ -1,5 +1,4 @@
 precision mediump float;
-varying vec2 TextureCoordsVarying;
 uniform sampler2D image;
 const highp vec3 W = vec3(0.2125, 0.7154, 0.0721);
 const vec2 TexSize = vec2(100.0, 100.0);
@@ -15,3 +14,4 @@ void main()
     float luminance = dot(delColor.rgb, W);
     gl_FragColor = vec4(vec3(luminance), 0.0) + bkColor;
 }
+

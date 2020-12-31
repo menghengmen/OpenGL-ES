@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0577784259E11D500BB126B /* MHShaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0577783259E11D500BB126B /* MHShaderView.m */; };
+		B0577788259E1B5500BB126B /* snow.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B0577786259E1B5500BB126B /* snow.fsh */; };
+		B0577789259E1B5500BB126B /* snow.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B0577787259E1B5500BB126B /* snow.vsh */; };
 		B05D1349259739E700AF56AF /* Scaling.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B05D1347259739E700AF56AF /* Scaling.fsh */; };
 		B05D134A259739E700AF56AF /* Scaling.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B05D1348259739E700AF56AF /* Scaling.vsh */; };
 		B05D134E25973DF000AF56AF /* OutOfBody.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B05D134C25973DF000AF56AF /* OutOfBody.fsh */; };
@@ -53,6 +56,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B0577782259E11D500BB126B /* MHShaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHShaderView.h; sourceTree = "<group>"; };
+		B0577783259E11D500BB126B /* MHShaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHShaderView.m; sourceTree = "<group>"; };
+		B0577786259E1B5500BB126B /* snow.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = snow.fsh; sourceTree = "<group>"; };
+		B0577787259E1B5500BB126B /* snow.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = snow.vsh; sourceTree = "<group>"; };
 		B05D1347259739E700AF56AF /* Scaling.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Scaling.fsh; sourceTree = "<group>"; };
 		B05D1348259739E700AF56AF /* Scaling.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Scaling.vsh; sourceTree = "<group>"; };
 		B05D134C25973DF000AF56AF /* OutOfBody.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = OutOfBody.fsh; sourceTree = "<group>"; };
@@ -116,6 +123,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0577781259E11A300BB126B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0577782259E11D500BB126B /* MHShaderView.h */,
+				B0577783259E11D500BB126B /* MHShaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0577785259E1B4700BB126B /* snow */ = {
+			isa = PBXGroup;
+			children = (
+				B0577787259E1B5500BB126B /* snow.vsh */,
+				B0577786259E1B5500BB126B /* snow.fsh */,
+			);
+			path = snow;
+			sourceTree = "<group>";
+		};
 		B05D1346259739AA00AF56AF /* Scaling filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -200,6 +225,7 @@
 			children = (
 				EAFB987524E29A32005DEE63 /* timg.jpg */,
 				EAFB984B24E129BB005DEE63 /* kunkun.jpg */,
+				B0577781259E11A300BB126B /* View */,
 				EAFB984524E12084005DEE63 /* Shader */,
 				EAFB983E24E0DF10005DEE63 /* Tool */,
 				EAFB982524E0DEB4005DEE63 /* AppDelegate.h */,
@@ -231,6 +257,7 @@
 		EAFB984524E12084005DEE63 /* Shader */ = {
 			isa = PBXGroup;
 			children = (
+				B0577785259E1B4700BB126B /* snow */,
 				B05D135A2598BE2000AF56AF /* relief */,
 				B05D1355259752A200AF56AF /* Illusion */,
 				B05D135025973F4A00AF56AF /* OutOfBody */,
@@ -401,6 +428,7 @@
 				EAD0052B24E3C56D00CDA161 /* HexagonMosaic.fsh in Resources */,
 				EAFB983224E0DEB8005DEE63 /* Assets.xcassets in Resources */,
 				EAFB985624E13787005DEE63 /* SplitScreen_3.fsh in Resources */,
+				B0577789259E1B5500BB126B /* snow.vsh in Resources */,
 				EAFB985924E1397A005DEE63 /* SplitScreen_4.vsh in Resources */,
 				EAFB986D24E242D6005DEE63 /* Reversal.fsh in Resources */,
 				EAFB984824E120B5005DEE63 /* Normal.fsh in Resources */,
@@ -420,6 +448,7 @@
 				B05D135E2598BE3A00AF56AF /* relief.vsh in Resources */,
 				EAFB985424E13765005DEE63 /* SplitScreen_3.vsh in Resources */,
 				B05D134E25973DF000AF56AF /* OutOfBody.fsh in Resources */,
+				B0577788259E1B5500BB126B /* snow.fsh in Resources */,
 				EAFB987224E27D92005DEE63 /* Mosaic.vsh in Resources */,
 				EAFB983024E0DEB4005DEE63 /* Main.storyboard in Resources */,
 				B05D135425973F6C00AF56AF /* Burr.vsh in Resources */,
@@ -436,6 +465,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0577784259E11D500BB126B /* MHShaderView.m in Sources */,
 				EAFB982D24E0DEB4005DEE63 /* ViewController.m in Sources */,
 				EAFB982724E0DEB4005DEE63 /* AppDelegate.m in Sources */,
 				EAFB983824E0DEB8005DEE63 /* main.m in Sources */,

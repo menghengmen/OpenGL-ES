@@ -193,6 +193,8 @@ typedef struct {
     else if(index == 15)
     {
            [self setupSplitReliefShaderProgram];
+    }else if (index ==16){
+        [self setupSnowShaderProgram];
     }
     // 重新开始滤镜动画
     [self startFilerAnimation];
@@ -256,6 +258,10 @@ typedef struct {
     [self setupShaderProgramWithName:@"relief"];
 }
 
+
+-(void)setupSnowShaderProgram{
+    [self setupShaderProgramWithName:@"snow"];
+}
 
 // 初始化着色器程序
 - (void)setupShaderProgramWithName:(NSString *)name{

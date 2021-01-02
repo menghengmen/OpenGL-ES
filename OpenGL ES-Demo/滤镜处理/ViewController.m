@@ -53,7 +53,7 @@ typedef struct {
     filterBar.delegate = self;
     [self.view addSubview:filterBar];
     
-    NSArray *dataSource = @[@"无",@"分屏_2",@"分屏_3",@"分屏_4",@"分屏_6",@"分屏_9",@"灰色",@"颠倒",@"方形马赛克",@"六边形马赛克",@"三角形马赛克",@"缩放滤镜",@"毛刺滤镜",@"灵魂出窍",@"幻觉滤镜",@"浮雕"];
+    NSArray *dataSource = @[@"无",@"分屏_2",@"分屏_3",@"分屏_4",@"分屏_6",@"分屏_9",@"灰色",@"颠倒",@"方形马赛克",@"六边形马赛克",@"三角形马赛克",@"缩放滤镜",@"毛刺滤镜",@"灵魂出窍",@"幻觉滤镜",@"浮雕",@"雪花",@"开屏",@"百叶窗"];
     
     filterBar.itemList = dataSource;
     
@@ -195,6 +195,10 @@ typedef struct {
            [self setupSplitReliefShaderProgram];
     }else if (index ==16){
         [self setupSnowShaderProgram];
+    } else if (index ==17){
+        [self setupTailShaderProgram];
+    } else if (index ==18){
+        [self setupShutterShaderProgram];
     }
     // 重新开始滤镜动画
     [self startFilerAnimation];
@@ -261,6 +265,16 @@ typedef struct {
 
 -(void)setupSnowShaderProgram{
     [self setupShaderProgramWithName:@"snow"];
+}
+
+-(void)setupTailShaderProgram{
+    [self setupShaderProgramWithName:@"123"];
+
+}
+
+-(void)setupShutterShaderProgram{
+    [self setupShaderProgramWithName:@"shutters"];
+
 }
 
 // 初始化着色器程序
@@ -465,9 +479,12 @@ typedef struct {
     
     // 传入时间
     CGFloat currentTime = self.displayLink.timestamp - self.startTimeInterval;
-    GLuint time = glGetUniformLocation(self.program, "Time");
-    glUniform1f(time, currentTime);
     
+    
+    GLuint time = glGetUniformLocation(self.program, "uPercent");
+    NSLog(@"%f",currentTime/10);
+    glUniform1f(time,currentTime/10);
+  //  M_PI_2
     // 清除画布
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(1, 1, 1, 1);

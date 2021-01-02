@@ -10,6 +10,12 @@
 		B0577784259E11D500BB126B /* MHShaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = B0577783259E11D500BB126B /* MHShaderView.m */; };
 		B0577788259E1B5500BB126B /* snow.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B0577786259E1B5500BB126B /* snow.fsh */; };
 		B0577789259E1B5500BB126B /* snow.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B0577787259E1B5500BB126B /* snow.vsh */; };
+		B0577791259F762400BB126B /* upDownTail.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B057778F259F762300BB126B /* upDownTail.fsh */; };
+		B0577792259F762400BB126B /* upDownTail.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B0577790259F762400BB126B /* upDownTail.vsh */; };
+		B0577795259F7F6500BB126B /* shutters.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B0577793259F7F6400BB126B /* shutters.fsh */; };
+		B0577796259F7F6500BB126B /* shutters.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B0577794259F7F6400BB126B /* shutters.vsh */; };
+		B057779925A0854A00BB126B /* 123.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B057779725A0854900BB126B /* 123.fsh */; };
+		B057779A25A0854A00BB126B /* 123.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B057779825A0854A00BB126B /* 123.vsh */; };
 		B05D1349259739E700AF56AF /* Scaling.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B05D1347259739E700AF56AF /* Scaling.fsh */; };
 		B05D134A259739E700AF56AF /* Scaling.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B05D1348259739E700AF56AF /* Scaling.vsh */; };
 		B05D134E25973DF000AF56AF /* OutOfBody.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B05D134C25973DF000AF56AF /* OutOfBody.fsh */; };
@@ -60,6 +66,12 @@
 		B0577783259E11D500BB126B /* MHShaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHShaderView.m; sourceTree = "<group>"; };
 		B0577786259E1B5500BB126B /* snow.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = snow.fsh; sourceTree = "<group>"; };
 		B0577787259E1B5500BB126B /* snow.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = snow.vsh; sourceTree = "<group>"; };
+		B057778F259F762300BB126B /* upDownTail.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = upDownTail.fsh; sourceTree = "<group>"; };
+		B0577790259F762400BB126B /* upDownTail.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = upDownTail.vsh; sourceTree = "<group>"; };
+		B0577793259F7F6400BB126B /* shutters.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shutters.fsh; sourceTree = "<group>"; };
+		B0577794259F7F6400BB126B /* shutters.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = shutters.vsh; sourceTree = "<group>"; };
+		B057779725A0854900BB126B /* 123.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 123.fsh; sourceTree = "<group>"; };
+		B057779825A0854A00BB126B /* 123.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = 123.vsh; sourceTree = "<group>"; };
 		B05D1347259739E700AF56AF /* Scaling.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Scaling.fsh; sourceTree = "<group>"; };
 		B05D1348259739E700AF56AF /* Scaling.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Scaling.vsh; sourceTree = "<group>"; };
 		B05D134C25973DF000AF56AF /* OutOfBody.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = OutOfBody.fsh; sourceTree = "<group>"; };
@@ -139,6 +151,15 @@
 				B0577786259E1B5500BB126B /* snow.fsh */,
 			);
 			path = snow;
+			sourceTree = "<group>";
+		};
+		B057778A259F74F200BB126B /* upDownTail */ = {
+			isa = PBXGroup;
+			children = (
+				B0577790259F762400BB126B /* upDownTail.vsh */,
+				B057778F259F762300BB126B /* upDownTail.fsh */,
+			);
+			path = upDownTail;
 			sourceTree = "<group>";
 		};
 		B05D1346259739AA00AF56AF /* Scaling filter */ = {
@@ -257,6 +278,11 @@
 		EAFB984524E12084005DEE63 /* Shader */ = {
 			isa = PBXGroup;
 			children = (
+				B057779825A0854A00BB126B /* 123.vsh */,
+				B057779725A0854900BB126B /* 123.fsh */,
+				B0577794259F7F6400BB126B /* shutters.vsh */,
+				B0577793259F7F6400BB126B /* shutters.fsh */,
+				B057778A259F74F200BB126B /* upDownTail */,
 				B0577785259E1B4700BB126B /* snow */,
 				B05D135A2598BE2000AF56AF /* relief */,
 				B05D1355259752A200AF56AF /* Illusion */,
@@ -421,6 +447,7 @@
 				EAFB984C24E129BB005DEE63 /* kunkun.jpg in Resources */,
 				EAFB986024E13DCF005DEE63 /* SplitScreen_6.vsh in Resources */,
 				EAD0052E24E3D06F00CDA161 /* TriangularMosaic.vsh in Resources */,
+				B0577792259F762400BB126B /* upDownTail.vsh in Resources */,
 				EAFB986524E13E84005DEE63 /* SplitScreen_9.fsh in Resources */,
 				EAFB986424E13E84005DEE63 /* SplitScreen_9.vsh in Resources */,
 				EAD0052924E3C56200CDA161 /* HexagonMosaic.vsh in Resources */,
@@ -428,9 +455,11 @@
 				EAD0052B24E3C56D00CDA161 /* HexagonMosaic.fsh in Resources */,
 				EAFB983224E0DEB8005DEE63 /* Assets.xcassets in Resources */,
 				EAFB985624E13787005DEE63 /* SplitScreen_3.fsh in Resources */,
+				B0577791259F762400BB126B /* upDownTail.fsh in Resources */,
 				B0577789259E1B5500BB126B /* snow.vsh in Resources */,
 				EAFB985924E1397A005DEE63 /* SplitScreen_4.vsh in Resources */,
 				EAFB986D24E242D6005DEE63 /* Reversal.fsh in Resources */,
+				B0577796259F7F6500BB126B /* shutters.vsh in Resources */,
 				EAFB984824E120B5005DEE63 /* Normal.fsh in Resources */,
 				EAFB985B24E13988005DEE63 /* SplitScreen_4.fsh in Resources */,
 				B05D135325973F6C00AF56AF /* Burr.fsh in Resources */,
@@ -440,7 +469,10 @@
 				EAFB985124E135A3005DEE63 /* SplitScreen_2.fsh in Resources */,
 				B05D134F25973DF000AF56AF /* OutOfBody.vsh in Resources */,
 				EAFB986824E23DBD005DEE63 /* Gray.vsh in Resources */,
+				B057779925A0854A00BB126B /* 123.fsh in Resources */,
 				B05D1358259752BB00AF56AF /* Illusion.vsh in Resources */,
+				B0577795259F7F6500BB126B /* shutters.fsh in Resources */,
+				B057779A25A0854A00BB126B /* 123.vsh in Resources */,
 				EAFB986A24E23DCB005DEE63 /* Gray.fsh in Resources */,
 				EAFB984F24E13597005DEE63 /* SplitScreen_2.vsh in Resources */,
 				EAFB987424E27DA0005DEE63 /* Mosaic.fsh in Resources */,

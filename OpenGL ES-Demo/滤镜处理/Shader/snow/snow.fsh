@@ -2,11 +2,11 @@
 
  
 precision mediump float;
-uniform sampler2D image;
+uniform sampler2D Texture;
 varying vec2 TextureCoordsVarying;
 uniform float iGlobalTime;
-const float _SnowflakeAmount = 400;
-const float _BlizardFactor = 0.25;
+//const float SnowflakeAmount = 400;
+const float BlizardFactor = 0.25;
 
 float rnd(float x)
 {
@@ -26,24 +26,24 @@ const vec2 iResolution = vec2(512., 512.);
 void main()
 {
     vec2 uv = TextureCoordsVarying.xy / iResolution.x;
-    vec4 color = texture2D(image, uv);
+    vec4 color = texture2D(Texture, uv);
  
-    fragColor = color;
+    gl_FragColor = color;
  
     float j;
-    for (int i = 0; i < _SnowflakeAmount; i++)
+    for (int i = 0; i < 400; i++)
     {
         j = float(i);
         float speed =
             0.3 + rnd(cos(j)) *
-            (0.7 + 0.5 * cos(j / (float(_SnowflakeAmount) * 0.25)));
+            (0.7 + 0.5 * cos(j / (float(400) * 0.25)));
  
  
         vec2 center = vec2(rnd(j) +
-                          (-0.25 + uv.y) * _BlizardFactor +
-                          0.1 * cos(iGlobalTime + sin(j)),mod( rnd(j) - speed * (iGlobalTime * 1.5 * (0.1 + _BlizardFactor)),
+                          (-0.25 + uv.y) * BlizardFactor +
+                          0.1 * cos(iGlobalTime + sin(j)),mod( rnd(j) - speed * (iGlobalTime * 1.5 * (0.1 + BlizardFactor)),
                           0.95) );
  
-        gl_FragColor += vec4(0.9 * drawCircle(uv, center, 0.001 + speed * 0.012));
-    };
-
+      gl_FragColor += vec4(0.9 * drawCircle(uv, center, 0.001 + speed * 0.012));
+    }
+}

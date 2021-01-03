@@ -484,6 +484,10 @@ typedef struct {
     GLuint time = glGetUniformLocation(self.program, "uPercent");
     NSLog(@"%f",currentTime/10);
     glUniform1f(time,currentTime/10);
+    
+    
+    
+    
   //  M_PI_2
     // 清除画布
     glClear(GL_COLOR_BUFFER_BIT);

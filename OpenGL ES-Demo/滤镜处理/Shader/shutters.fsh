@@ -1,7 +1,8 @@
 precision highp float;
 uniform sampler2D Texture;
 varying vec2 TextureCoordsVarying;
-const vec2 uSize = vec2(512,512);       
+//const vec2 uSize = vec2(512,512);
+
 const float uPercent = 0.5;
 const float uDirect = 0.785;
 

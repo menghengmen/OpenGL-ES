@@ -481,7 +481,7 @@ typedef struct {
     CGFloat currentTime = self.displayLink.timestamp - self.startTimeInterval;
     
     
-    GLuint time = glGetUniformLocation(self.program, "uPercent");
+    GLuint time = glGetUniformLocation(self.program, "Time");
     NSLog(@"%f",currentTime/10);
     glUniform1f(time,currentTime/10);
     

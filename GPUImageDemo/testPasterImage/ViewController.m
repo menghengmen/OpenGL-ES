@@ -46,9 +46,9 @@
 -(void)configUi{
     NSArray *imageViewImageArr = [NSArray arrayWithObjects:
                                   @"icon_home_beauty",
-                                  @"icon_home_camera" ,
+                                  @"icon_home_camera" ,@"icon_home_beauty",
                                   nil];
-    NSArray *textArr = [NSArray arrayWithObjects:@"美化图片", @"万能相机", nil];
+    NSArray *textArr = [NSArray arrayWithObjects:@"美化图片", @"万能相机",@"自定义滤镜", nil];
     
     FWButton *btnHome = nil;
     CGFloat padding = 0;
@@ -59,7 +59,7 @@
     
     CGFloat startX = WIDTH /  2 - padding / 2 - kWidth;
     CGFloat startY = HEIGHT / 2 - padding - kHeight / 2 - kHeight -  61;
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         NSInteger row  = i % 2;
         NSInteger col  = i / 2;
         NSInteger page = i / 6;

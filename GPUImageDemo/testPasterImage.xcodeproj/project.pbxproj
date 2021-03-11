@@ -31,6 +31,9 @@
 		68E54FF61D9A6C140003BF63 /* UIImage+Resize.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E54FEE1D9A6C140003BF63 /* UIImage+Resize.m */; };
 		68E54FF71D9A6C140003BF63 /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E54FF01D9A6C140003BF63 /* UIImage+RoundedCorner.m */; };
 		68E54FF81D9A6C140003BF63 /* UIImage+SplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 68E54FF21D9A6C140003BF63 /* UIImage+SplitImageIntoTwoParts.m */; };
+		B09737CF25AB108400CD58BE /* CustomShaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B09737CD25AB108400CD58BE /* CustomShaderViewController.m */; };
+		B09737D025AB108400CD58BE /* CustomShaderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B09737CE25AB108400CD58BE /* CustomShaderViewController.xib */; };
+		B09737D325AB121E00CD58BE /* MHGPUImageBaseFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B09737D225AB121E00CD58BE /* MHGPUImageBaseFilter.m */; };
 		B0BFE0682174D3D900E59606 /* FWButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BFE0662174D3D900E59606 /* FWButton.m */; };
 		B0BFE1E42174E59900E59606 /* GPUImageCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BFE1E32174E59900E59606 /* GPUImageCameraViewController.m */; };
 		B0BFE1E52174E6A500E59606 /* LMCameraFilters.m in Sources */ = {isa = PBXBuildFile; fileRef = B0BFE1DF2174E51E00E59606 /* LMCameraFilters.m */; };
@@ -110,6 +113,11 @@
 		68E54FF01D9A6C140003BF63 /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		68E54FF11D9A6C140003BF63 /* UIImage+SplitImageIntoTwoParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+SplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
 		68E54FF21D9A6C140003BF63 /* UIImage+SplitImageIntoTwoParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
+		B09737CC25AB108400CD58BE /* CustomShaderViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomShaderViewController.h; sourceTree = "<group>"; };
+		B09737CD25AB108400CD58BE /* CustomShaderViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomShaderViewController.m; sourceTree = "<group>"; };
+		B09737CE25AB108400CD58BE /* CustomShaderViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomShaderViewController.xib; sourceTree = "<group>"; };
+		B09737D125AB121E00CD58BE /* MHGPUImageBaseFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MHGPUImageBaseFilter.h; sourceTree = "<group>"; };
+		B09737D225AB121E00CD58BE /* MHGPUImageBaseFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MHGPUImageBaseFilter.m; sourceTree = "<group>"; };
 		B0BFE0662174D3D900E59606 /* FWButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FWButton.m; sourceTree = "<group>"; };
 		B0BFE0672174D3D900E59606 /* FWButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FWButton.h; sourceTree = "<group>"; };
 		B0BFE06A2174E51C00E59606 /* LMCameraManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LMCameraManager.m; sourceTree = "<group>"; };
@@ -178,6 +186,7 @@
 		68A7FE8C1D7D602E00F3488D /* testPasterImage */ = {
 			isa = PBXGroup;
 			children = (
+				B09737CB25AB105C00CD58BE /* 自定义滤镜 */,
 				B0BFE0692174E4F400E59606 /* 实时滤镜 */,
 				68A7FE901D7D602E00F3488D /* AppDelegate.h */,
 				68A7FE911D7D602E00F3488D /* AppDelegate.m */,
@@ -325,6 +334,18 @@
 			path = "UIImage-Extensions";
 			sourceTree = "<group>";
 		};
+		B09737CB25AB105C00CD58BE /* 自定义滤镜 */ = {
+			isa = PBXGroup;
+			children = (
+				B09737D125AB121E00CD58BE /* MHGPUImageBaseFilter.h */,
+				B09737D225AB121E00CD58BE /* MHGPUImageBaseFilter.m */,
+				B09737CC25AB108400CD58BE /* CustomShaderViewController.h */,
+				B09737CD25AB108400CD58BE /* CustomShaderViewController.m */,
+				B09737CE25AB108400CD58BE /* CustomShaderViewController.xib */,
+			);
+			path = "自定义滤镜";
+			sourceTree = "<group>";
+		};
 		B0BFE0692174E4F400E59606 /* 实时滤镜 */ = {
 			isa = PBXGroup;
 			children = (
@@ -434,7 +455,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
-				ORGANIZATIONNAME = "王迎博";
+				ORGANIZATIONNAME = mac;
 				TargetAttributes = {
 					68A7FE891D7D602E00F3488D = {
 						CreatedOnToolsVersion = 7.3;
@@ -455,6 +476,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -475,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B09737D025AB108400CD58BE /* CustomShaderViewController.xib in Resources */,
 				68A7FE9D1D7D602E00F3488D /* LaunchScreen.storyboard in Resources */,
 				68A7FE9A1D7D602E00F3488D /* Assets.xcassets in Resources */,
 				68A7FE981D7D602E00F3488D /* Main.storyboard in Resources */,
@@ -567,8 +590,10 @@
 				68A7FE921D7D602E00F3488D /* AppDelegate.m in Sources */,
 				68E54F901D9A13D10003BF63 /* YBPasterScrollView.m in Sources */,
 				68E54FF81D9A6C140003BF63 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
+				B09737D325AB121E00CD58BE /* MHGPUImageBaseFilter.m in Sources */,
 				68E54F891D9A13540003BF63 /* UIViewController+Extension.m in Sources */,
 				68E54FF51D9A6C140003BF63 /* UIImage+Cut.m in Sources */,
+				B09737CF25AB108400CD58BE /* CustomShaderViewController.m in Sources */,
 				68E54FF41D9A6C140003BF63 /* UIImage+Alpha.m in Sources */,
 				68E54F911D9A13D10003BF63 /* YBPasterView.m in Sources */,
 				68A7FE8F1D7D602E00F3488D /* main.m in Sources */,
@@ -666,7 +691,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -704,7 +729,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;

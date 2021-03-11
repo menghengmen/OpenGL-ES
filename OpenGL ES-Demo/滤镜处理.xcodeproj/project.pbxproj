@@ -26,6 +26,9 @@
 		B05D1359259752BB00AF56AF /* Illusion.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B05D1357259752BB00AF56AF /* Illusion.fsh */; };
 		B05D135D2598BE3A00AF56AF /* relief.fsh in Resources */ = {isa = PBXBuildFile; fileRef = B05D135B2598BE3A00AF56AF /* relief.fsh */; };
 		B05D135E2598BE3A00AF56AF /* relief.vsh in Resources */ = {isa = PBXBuildFile; fileRef = B05D135C2598BE3A00AF56AF /* relief.vsh */; };
+		B06FEF0A25FA6C92009D9BFA /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B06FEF0525FA6C91009D9BFA /* GLView.m */; };
+		B06FEF0B25FA6C92009D9BFA /* GLContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B06FEF0725FA6C91009D9BFA /* GLContainerView.m */; };
+		B06FEF0C25FA6C92009D9BFA /* OverLayRender.m in Sources */ = {isa = PBXBuildFile; fileRef = B06FEF0825FA6C91009D9BFA /* OverLayRender.m */; };
 		EAD0052924E3C56200CDA161 /* HexagonMosaic.vsh in Resources */ = {isa = PBXBuildFile; fileRef = EAD0052824E3C56200CDA161 /* HexagonMosaic.vsh */; };
 		EAD0052B24E3C56D00CDA161 /* HexagonMosaic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = EAD0052A24E3C56D00CDA161 /* HexagonMosaic.fsh */; };
 		EAD0052E24E3D06F00CDA161 /* TriangularMosaic.vsh in Resources */ = {isa = PBXBuildFile; fileRef = EAD0052D24E3D06F00CDA161 /* TriangularMosaic.vsh */; };
@@ -82,6 +85,12 @@
 		B05D1357259752BB00AF56AF /* Illusion.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Illusion.fsh; sourceTree = "<group>"; };
 		B05D135B2598BE3A00AF56AF /* relief.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = relief.fsh; sourceTree = "<group>"; };
 		B05D135C2598BE3A00AF56AF /* relief.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = relief.vsh; sourceTree = "<group>"; };
+		B06FEF0425FA6C91009D9BFA /* GLContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLContainerView.h; sourceTree = "<group>"; };
+		B06FEF0525FA6C91009D9BFA /* GLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLView.m; sourceTree = "<group>"; };
+		B06FEF0625FA6C91009D9BFA /* OverLayRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OverLayRender.h; sourceTree = "<group>"; };
+		B06FEF0725FA6C91009D9BFA /* GLContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLContainerView.m; sourceTree = "<group>"; };
+		B06FEF0825FA6C91009D9BFA /* OverLayRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverLayRender.m; sourceTree = "<group>"; };
+		B06FEF0925FA6C91009D9BFA /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
 		EAD0052824E3C56200CDA161 /* HexagonMosaic.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = HexagonMosaic.vsh; sourceTree = "<group>"; };
 		EAD0052A24E3C56D00CDA161 /* HexagonMosaic.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = HexagonMosaic.fsh; sourceTree = "<group>"; };
 		EAD0052D24E3D06F00CDA161 /* TriangularMosaic.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = TriangularMosaic.vsh; sourceTree = "<group>"; };
@@ -207,6 +216,19 @@
 			path = relief;
 			sourceTree = "<group>";
 		};
+		B06FEF0325FA6C91009D9BFA /* GLView */ = {
+			isa = PBXGroup;
+			children = (
+				B06FEF0425FA6C91009D9BFA /* GLContainerView.h */,
+				B06FEF0525FA6C91009D9BFA /* GLView.m */,
+				B06FEF0625FA6C91009D9BFA /* OverLayRender.h */,
+				B06FEF0725FA6C91009D9BFA /* GLContainerView.m */,
+				B06FEF0825FA6C91009D9BFA /* OverLayRender.m */,
+				B06FEF0925FA6C91009D9BFA /* GLView.h */,
+			);
+			path = GLView;
+			sourceTree = "<group>";
+		};
 		EAD0052724E3C54000CDA161 /* HexagonMosaic */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,6 +268,7 @@
 			children = (
 				EAFB987524E29A32005DEE63 /* timg.jpg */,
 				EAFB984B24E129BB005DEE63 /* kunkun.jpg */,
+				B06FEF0325FA6C91009D9BFA /* GLView */,
 				B0577781259E11A300BB126B /* View */,
 				EAFB984524E12084005DEE63 /* Shader */,
 				EAFB983E24E0DF10005DEE63 /* Tool */,
@@ -497,13 +520,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B06FEF0C25FA6C92009D9BFA /* OverLayRender.m in Sources */,
 				B0577784259E11D500BB126B /* MHShaderView.m in Sources */,
+				B06FEF0A25FA6C92009D9BFA /* GLView.m in Sources */,
 				EAFB982D24E0DEB4005DEE63 /* ViewController.m in Sources */,
 				EAFB982724E0DEB4005DEE63 /* AppDelegate.m in Sources */,
 				EAFB983824E0DEB8005DEE63 /* main.m in Sources */,
 				EAFB984124E0DF2C005DEE63 /* FilterBar.m in Sources */,
 				EAFB982A24E0DEB4005DEE63 /* SceneDelegate.m in Sources */,
 				EAFB984424E0DF50005DEE63 /* FilterBarCell.m in Sources */,
+				B06FEF0B25FA6C92009D9BFA /* GLContainerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

